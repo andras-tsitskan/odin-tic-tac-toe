@@ -77,4 +77,10 @@ const gameboard = (() => {
       });
     }
   };
+
+  const getGameboard = () => {
+    return gameboard;
+  };
+
+  return { getGameboard };
 })();
