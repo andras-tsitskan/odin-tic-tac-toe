@@ -13,10 +13,15 @@ const gameboard = (() => {
   // SELECTORS
   const cells = document.querySelectorAll(".js-gameboard-cell");
   const resetBtn = document.querySelector(".js-reset-btn");
+  const humanMarkerField = document.querySelector(".js-human-marker");
+  const computerMarkerField = document.querySelector(".js-computer-marker");
+
   // INIT
   const gameboard = new Array(9);
   resetGameboard();
 
+  humanMarkerField.textContent = human.getMarker();
+  computerMarkerField.textContent = computer.getMarker();
 
   // EVENT FUNCTIONS
   function markCell(event) {
