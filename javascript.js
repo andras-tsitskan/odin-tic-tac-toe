@@ -12,6 +12,7 @@ const computer = playerFactory("O");
 const gameboard = (() => {
   // SELECTORS
   const cells = document.querySelectorAll(".js-gameboard-cell");
+  const resetBtn = document.querySelector(".js-reset-btn");
   // INIT
   const gameboard = new Array(9);
   resetGameboard();
@@ -27,6 +28,12 @@ const gameboard = (() => {
     }
   }
 
+  function resetGame() {
+    resetGameboard();
+    resetCells();
+    addEventToCells();
+  }
+
   // EVENT BINDING
   // addEventToCells() is created as a function for the possibility to call it in resetGame().
   const addEventToCells = () => {
@@ -35,9 +42,16 @@ const gameboard = (() => {
     });
   };
   addEventToCells();
+
+  resetBtn.addEventListener("click", resetGame);
+
   // OTHER FUNCTIONS
   function resetGameboard() {
     gameboard.fill("");
+  }
+
+  function resetCells() {
+    cells.forEach((cell) => (cell.textContent = ""));
   }
 
   const checkVictory = () => {
