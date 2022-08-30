@@ -5,3 +5,6 @@ const playerFactory = (marker) => {
 
   return { getMarker };
 };
+
+const human = playerFactory("X");
+const computer = playerFactory("O");
