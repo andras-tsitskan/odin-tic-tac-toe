@@ -8,3 +8,6 @@ const playerFactory = (marker) => {
 
 const human = playerFactory("X");
 const computer = playerFactory("O");
+
+const gameboard = (() => {
+})();
