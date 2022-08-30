@@ -32,6 +32,9 @@ const gameboard = (() => {
     resetGameboard();
     resetCells();
     addEventToCells();
+
+    // TO BE DELETED
+    console.log(gameboard);
   }
 
   // EVENT BINDING
@@ -81,6 +84,9 @@ const gameboard = (() => {
   const getGameboard = () => {
     return gameboard;
   };
+
+  // TO BE DELETED
+  console.log(gameboard);
 
   return { getGameboard };
 })();
