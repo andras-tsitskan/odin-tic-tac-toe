@@ -32,6 +32,11 @@ body {
   font-weight: 200;
 }
 
+.left,
+.right {
+  padding: 1rem;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
