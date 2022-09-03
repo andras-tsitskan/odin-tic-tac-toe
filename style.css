@@ -59,6 +59,7 @@ body {
   align-items: center;
 
   background-color: white;
-  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: 200;
   cursor: pointer;
 }
