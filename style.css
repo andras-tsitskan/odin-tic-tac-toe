@@ -18,6 +18,11 @@ body {
   grid-template-columns: 1fr 1fr;
 }
 
+.left h1 {
+  font-size: 4rem;
+  font-weight: 200;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
