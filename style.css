@@ -18,6 +18,15 @@ body {
   grid-template-columns: 1fr 1fr;
 }
 
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: gold;
+  border-radius: 0 1rem 1rem 0;
+}
+
 .left h1 {
   font-size: 4rem;
   font-weight: 200;
