@@ -42,6 +42,7 @@ const gameboard = (() => {
     resetCells();
     addEventToCells();
     turnCount = 0;
+    resetResultField();
 
     // TO BE DELETED
     console.log(gameboard);
