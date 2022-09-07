@@ -23,6 +23,7 @@ const gameboard = (() => {
 
   humanMarkerField.textContent = human.getMarker();
   computerMarkerField.textContent = computer.getMarker();
+  resetResultField();
 
   // EVENT FUNCTIONS
   function markCell(event) {
@@ -61,6 +62,11 @@ const gameboard = (() => {
 
   function resetCells() {
     cells.forEach((cell) => (cell.textContent = ""));
+  }
+
+  function resetResultField() {
+    resultField.textContent = "the game is still ongoing!";
+    resultField.classList.remove("gold");
   }
 
   const checkVictory = () => {
