@@ -90,10 +90,28 @@ const gameboard = (() => {
         return item.every((subitem) => subitem === "X");
       })
     ) {
-      console.log("VICTORY");
+      console.log("YOU WON");
+      resultField.textContent = "you won! Nice job!";
+      resultField.classList.add("gold");
       cells.forEach((cell) => {
         cell.removeEventListener("click", markCell);
       });
+      return;
+    } else if (
+      winConditionRow.some((item) => {
+        return item.every((subitem) => subitem === "O");
+      })
+    ) {
+      console.log("COMPUTER WON");
+      resultField.textContent = "computer won. Press RESET!";
+      resultField.classList.add("gold");
+      cells.forEach((cell) => {
+        cell.removeEventListener("click", markCell);
+      });
+      return;
+    }
+  };
+
     }
   };
 
