@@ -15,6 +15,7 @@ const gameboard = (() => {
   const resetBtn = document.querySelector(".js-reset-btn");
   const humanMarkerField = document.querySelector(".js-human-marker");
   const computerMarkerField = document.querySelector(".js-computer-marker");
+  const resultField = document.querySelector(".js-result");
 
   // INIT
   const gameboard = new Array(9);
