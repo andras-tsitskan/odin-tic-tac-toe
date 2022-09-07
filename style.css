@@ -37,6 +37,12 @@ body {
   padding: 2rem;
 }
 
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
