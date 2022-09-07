@@ -34,6 +34,7 @@ const gameboard = (() => {
       console.log(gameboard);
       turnCount++;
       checkVictory();
+      getComputerMove();
     }
   }
 
@@ -112,6 +113,22 @@ const gameboard = (() => {
     }
   };
 
+  const getComputerMove = () => {
+    while (turnCount < 5) {
+      const randomCell = Math.floor(Math.random() * gameboard.length);
+      const computerCellSelection = gameboard[randomCell];
+
+      if (computerCellSelection === "") {
+        gameboard[randomCell] = "O";
+        cells[randomCell].textContent = "O";
+        cells[randomCell].removeEventListener("click", markCell);
+        checkVictory();
+
+        // TO BE DELETED
+        console.log(gameboard);
+
+        break;
+      }
     }
   };
 
