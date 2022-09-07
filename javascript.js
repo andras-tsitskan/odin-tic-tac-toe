@@ -10,14 +10,16 @@ const human = playerFactory("X");
 const computer = playerFactory("O");
 
 const gameboard = (() => {
-  // SELECTORS
+  // --- SELECTORS ---
+
   const cells = document.querySelectorAll(".js-gameboard-cell");
   const resetBtn = document.querySelector(".js-reset-btn");
   const humanMarkerField = document.querySelector(".js-human-marker");
   const computerMarkerField = document.querySelector(".js-computer-marker");
   const resultField = document.querySelector(".js-result");
 
-  // INIT
+  // --- INIT ---
+
   const gameboard = new Array(9);
   resetGameboard();
 
@@ -26,7 +28,8 @@ const gameboard = (() => {
   resetResultField();
   let turnCount = 0;
 
-  // EVENT FUNCTIONS
+  // --- EVENT FUNCTIONS ---
+
   function markCell(event) {
     if (gameboard[event.target.dataset.cell] !== human.getMarker()) {
       gameboard[event.target.dataset.cell] = human.getMarker();
@@ -50,7 +53,8 @@ const gameboard = (() => {
     console.clear();
   }
 
-  // EVENT BINDING
+  // --- EVENT BINDING ---
+
   // addEventToCells() is created as a function for the possibility to call it in resetGame().
   const addEventToCells = () => {
     cells.forEach((cell) => {
@@ -61,7 +65,8 @@ const gameboard = (() => {
 
   resetBtn.addEventListener("click", resetGame);
 
-  // OTHER FUNCTIONS
+  // --- HELPER FUNCTIONS ---
+
   function resetGameboard() {
     gameboard.fill("");
   }
