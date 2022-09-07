@@ -47,6 +47,7 @@ const gameboard = (() => {
 
     // TO BE DELETED
     console.log(gameboard);
+    console.clear();
   }
 
   // EVENT BINDING
