@@ -24,6 +24,7 @@ const gameboard = (() => {
   humanMarkerField.textContent = human.getMarker();
   computerMarkerField.textContent = computer.getMarker();
   resetResultField();
+  let turnCount = 0;
 
   // EVENT FUNCTIONS
   function markCell(event) {
@@ -31,6 +32,7 @@ const gameboard = (() => {
       gameboard[event.target.dataset.cell] = human.getMarker();
       event.target.textContent = human.getMarker();
       console.log(gameboard);
+      turnCount++;
       checkVictory();
     }
   }
@@ -39,6 +41,7 @@ const gameboard = (() => {
     resetGameboard();
     resetCells();
     addEventToCells();
+    turnCount = 0;
 
     // TO BE DELETED
     console.log(gameboard);
