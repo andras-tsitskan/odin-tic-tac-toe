@@ -63,3 +63,7 @@ body {
   font-weight: 200;
   cursor: pointer;
 }
+
+.gold {
+  background-color: gold;
+}
