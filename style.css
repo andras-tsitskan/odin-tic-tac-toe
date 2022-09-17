@@ -17,6 +17,8 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr min-content;
+
+  background-color: whitesmoke;
 }
 
 .left {
@@ -66,7 +68,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  background-color: white;
+  background-color: whitesmoke;
   font-size: 4rem;
   font-weight: 200;
   cursor: pointer;
