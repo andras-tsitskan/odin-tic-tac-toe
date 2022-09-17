@@ -77,7 +77,7 @@ const gameboard = (() => {
   }
 
   function resetResultField() {
-    resultField.textContent = "the game is ongoing!";
+    resultField.textContent = "you are thinking your next move, I know that!";
     resultField.classList.remove("gold");
   }
 
