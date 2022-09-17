@@ -26,6 +26,7 @@ const gameboard = (() => {
   humanMarkerField.textContent = human.getMarker();
   computerMarkerField.textContent = computer.getMarker();
   resetResultField();
+
   let turnCount = 0;
 
   // --- EVENT FUNCTIONS ---
@@ -76,12 +77,12 @@ const gameboard = (() => {
   }
 
   function resetResultField() {
-    resultField.textContent = "the game is still ongoing!";
+    resultField.textContent = "the game is ongoing!";
     resultField.classList.remove("gold");
   }
 
   const checkVictory = () => {
-    const winConditionRow = [
+    const winConditionRows = [
       [gameboard[0], gameboard[1], gameboard[2]],
       [gameboard[3], gameboard[4], gameboard[5]],
       [gameboard[6], gameboard[7], gameboard[8]],
@@ -93,7 +94,7 @@ const gameboard = (() => {
     ];
 
     if (
-      winConditionRow.some((item) => {
+      winConditionRows.some((item) => {
         return item.every((subitem) => subitem === "X");
       })
     ) {
@@ -105,12 +106,12 @@ const gameboard = (() => {
       });
       return;
     } else if (
-      winConditionRow.some((item) => {
+      winConditionRows.some((item) => {
         return item.every((subitem) => subitem === "O");
       })
     ) {
       console.log("COMPUTER WON");
-      resultField.textContent = "computer won. Press RESET!";
+      resultField.textContent = "computer won. Press RESET to play again.";
       resultField.classList.add("gold");
       cells.forEach((cell) => {
         cell.removeEventListener("click", markCell);
