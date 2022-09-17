@@ -93,3 +93,8 @@ footer {
 i:hover {
   scale: 1.1;
 }
+
+.vanilla {
+  color: inherit;
+  text-decoration: none;
+}
