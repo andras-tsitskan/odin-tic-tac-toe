@@ -117,6 +117,13 @@ const gameboard = (() => {
         cell.removeEventListener("click", markCell);
       });
       return;
+    } else if (turnCount >= 4) {
+      resultField.textContent = "it is a tie! Press RESET to play again.";
+      resultField.classList.add("gold");
+      cells.forEach((cell) => {
+        cell.removeEventListener("click", markCell);
+      });
+      return;
     }
   };
 
