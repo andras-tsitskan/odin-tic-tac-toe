@@ -89,3 +89,7 @@ footer {
 .gold {
   background-color: gold;
 }
+
+i:hover {
+  scale: 1.1;
+}
