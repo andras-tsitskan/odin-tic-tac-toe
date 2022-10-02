@@ -161,7 +161,10 @@ const gameboard = (() => {
 })();
 
 const displayController = (() => {
+  // --- SELECTORS ---
   const turnCountField = document.querySelector(".js-turn-number");
+
+  // --- HELPER FUNCTIONS ---
 
   const updateTurnCountField = (turnCount) => {
     if (turnCount < 4) {
