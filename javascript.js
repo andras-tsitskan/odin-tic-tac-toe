@@ -27,7 +27,7 @@ const gameboard = (() => {
   computerMarkerField.textContent = computer.getMarker();
   resetResultField();
 
-  let turnCount = 0;
+  let turnCount = 1;
 
   // --- EVENT FUNCTIONS ---
 
@@ -37,6 +37,7 @@ const gameboard = (() => {
       event.target.textContent = human.getMarker();
       console.log(gameboard);
       turnCount++;
+      displayController.updateTurnCountField(turnCount);
       checkVictory();
       getComputerMove();
     }
@@ -46,7 +47,8 @@ const gameboard = (() => {
     resetGameboard();
     resetCells();
     addEventToCells();
-    turnCount = 0;
+    turnCount = 1;
+    displayController.updateTurnCountField(turnCount);
     resetResultField();
 
     // TO BE DELETED
@@ -118,7 +120,7 @@ const gameboard = (() => {
         cell.removeEventListener("click", markCell);
       });
       return;
-    } else if (turnCount >= 4) {
+    } else if (turnCount >= 5) {
       resultField.textContent =
         'it is a tie! Press "Restart game" to play again.';
       resultField.classList.add("gold");
@@ -159,4 +161,15 @@ const gameboard = (() => {
 })();
 
 const displayController = (() => {
+  const turnCountField = document.querySelector(".js-turn-number");
+
+  const updateTurnCountField = (turnCount) => {
+    if (turnCount < 4) {
+      turnCountField.textContent = `Turn ${turnCount}/4`;
+    } else if ((turnCount = 4)) {
+      turnCountField.textContent = "Final turn!";
+    }
+  };
+
+  return { updateTurnCountField };
 })();
