@@ -43,6 +43,18 @@ const gameboard = (() => {
     }
   }
 
+  const markCell2 = (event, marker) => {
+    if (gameboard[event.target.dataset.cell] === "") {
+      gameboard[event.target.dataset.cell] = marker;
+      event.target.textContent = marker;
+      console.log(gameboard);
+      turnCount++;
+      displayController.updateTurnCountField(turnCount);
+      checkVictory();
+      getComputerMove();
+    }
+  };
+
   function resetGame() {
     resetGameboard();
     resetCells();
@@ -61,9 +73,16 @@ const gameboard = (() => {
   // addEventToCells() is created as a function for the possibility to call it in resetGame().
   const addEventToCells = () => {
     cells.forEach((cell) => {
-      cell.addEventListener("click", markCell);
+      cell.addEventListener("click", (event) => {
+        markCell2(event, human.getMarker());
+      });
     });
   };
+  // const addEventToCells = () => {
+  //   cells.forEach((cell) => {
+  //     cell.addEventListener("click", markCell);
+  //   });
+  // };
   addEventToCells();
 
   resetBtn.addEventListener("click", resetGame);
