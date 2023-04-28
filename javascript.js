@@ -14,9 +14,9 @@ const gameboard = (() => {
 
   const cells = document.querySelectorAll(".js-gameboard-cell");
   const resetBtn = document.querySelector(".js-reset-btn");
+  const resultField = document.querySelector(".js-result");
   const humanMarkerField = document.querySelector(".js-human-marker");
   const computerMarkerField = document.querySelector(".js-computer-marker");
-  const resultField = document.querySelector(".js-result");
 
   // --- INIT ---
 
